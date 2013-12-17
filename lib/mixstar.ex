@@ -1,0 +1,2 @@
+defmodule MixStar do
+end
