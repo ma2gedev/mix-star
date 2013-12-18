@@ -11,14 +11,25 @@ defmodule Mix.Tasks.Deps.Star do
   def run(args) do
     Mix.Task.run("deps.get", args)
 
-    gh_list = Enum.map loaded, fn(Mix.Dep[scm: scm, opts: opts] = deps) ->
+    Mix.Task.run "app.start", args
+
+    Enum.map(loaded, fn(Mix.Dep[opts: opts]) ->
       match_list = Regex.named_captures(%r/^git:\/\/github.com\/(?<gh>.*).git$/g, opts[:git])
       match_list[:gh]
-    end
-    gh_list
+    end)
       |> Enum.filter(&(&1 != nil))
       |> Enum.map fn(gh) ->
-        IO.puts gh
+        starring gh
       end
+  end
+
+  def starring(gh) do
+    case MixStar.GitHub.star(gh) do
+      { :ok, _body } ->
+        IO.puts "starred #{gh}"
+      { :error, body } ->
+        IO.puts "failed to star #{gh}"
+        IO.puts body
+    end
   end
 end

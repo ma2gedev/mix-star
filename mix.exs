@@ -10,7 +10,9 @@ defmodule MixStar.Mixfile do
 
   # Configuration for the OTP application
   def application do
-    []
+    [
+      applications: [ :httpotion ]
+    ]
   end
 
   # Returns the list of dependencies in the format:
@@ -19,6 +21,8 @@ defmodule MixStar.Mixfile do
   # To specify particular versions, regardless of the tag, do:
   # { :barbat, "~> 0.1", github: "elixir-lang/barbat.git" }
   defp deps do
-    []
+    [
+      { :httpotion, github: "myfreeweb/httpotion" }
+    ]
   end
 end
