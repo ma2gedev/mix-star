@@ -26,9 +26,9 @@ defmodule Mix.Tasks.Deps.Star do
   def starring(gh) do
     case MixStar.GitHub.star(gh) do
       { :ok, _body } ->
-        IO.puts "starred #{gh}"
+        IO.puts "\e[33m★  starred #{gh}\e[0m"
       { :error, body } ->
-        IO.puts "failed to star #{gh}"
+        IO.puts "\e[31mfailed to star #{gh}\e[0m"
         IO.puts body
     end
   end
