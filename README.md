@@ -10,7 +10,7 @@ Enjoy!
 $ git clone git@github.com:ma2gedev/mix-star.git
 $ cd mix-star
 $ mix deps.get
-$ mix do archive, local.install
+$ mix do archive, archive.install
 ```
 
 Now you get `mix deps.star` command!
