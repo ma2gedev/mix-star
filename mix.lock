@@ -1,2 +1,2 @@
-[ "httpotion": {:git, "git://github.com/myfreeweb/httpotion.git", "d164b4c5de6b073f49d9833b8cc90aa1b794f368", []},
-  "ibrowse": {:git, "git://github.com/cmullaparthi/ibrowse.git", "fb97c6601418c836bc8805ada1c200ce640b441d", []} ]
+%{"httpotion": {:git, "git://github.com/myfreeweb/httpotion.git", "1a7d8ac3d5f7c2da5d48496acf3adfc9f73fcc69", []},
+  "ibrowse": {:git, "git://github.com/cmullaparthi/ibrowse.git", "7871e2ebe8811efb64e1917e2de455fa87e8dfe3", [tag: "v4.1.0"]}}

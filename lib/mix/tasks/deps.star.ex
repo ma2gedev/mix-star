@@ -6,16 +6,16 @@ defmodule Mix.Tasks.Deps.Star do
   @moduledoc """
   """
 
-  import Mix.Deps, only: [loaded: 0]
+  import Mix.Dep, only: [loaded: 1]
 
   def run(args) do
     Mix.Task.run("deps.get", args)
 
     Mix.Task.run "app.start", args
 
-    Enum.map(loaded, fn(Mix.Dep[opts: opts]) ->
-      match_list = Regex.named_captures(%r/^git:\/\/github.com\/(?<gh>.*).git$/g, opts[:git])
-      match_list[:gh]
+    Enum.map(loaded(%{}), fn(%Mix.Dep{opts: opts}) ->
+      match_list = Regex.named_captures(~r/^git:\/\/github.com\/(?<gh>.*).git$/, opts[:git])
+      match_list["gh"]
     end)
       |> Enum.filter(&(&1 != nil))
       |> Enum.map fn(gh) ->
