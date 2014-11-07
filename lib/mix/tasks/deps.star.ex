@@ -14,7 +14,7 @@ defmodule Mix.Tasks.Deps.Star do
     Mix.Task.run "app.start", args
 
     Enum.map(loaded(%{}), fn(%Mix.Dep{opts: opts}) ->
-      match_list = Regex.named_captures(~r/^git:\/\/github.com\/(?<gh>.*).git$/, opts[:git])
+      match_list = Regex.named_captures(~r/^git:\/\/github.com\/(?<gh>.*).git$/, opts[:git] || "")
       match_list["gh"]
     end)
       |> Enum.filter(&(&1 != nil))
