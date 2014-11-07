@@ -3,8 +3,15 @@ defmodule MixStar.Mixfile do
 
   def project do
     [ app: :mixstar,
+      name: "MixStar",
       version: "0.0.1",
       elixir: "~> 1.0.0",
+      package: [
+        contributors: ["Takayuki Matsubara"],
+        licenses: ["MIT"],
+        links: %{"GitHub" => "https://github.com/ma2gedev/mix-star"}
+       ],
+      description: "MixStar starred GitHub repository that depends on your project",
       deps: deps ]
   end
 
