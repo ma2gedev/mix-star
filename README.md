@@ -6,22 +6,30 @@ Enjoy!
 
 ## How to install
 
+Add `:mixstar` to your project's dependencies with `only: :dev`:
+
 ```
-$ git clone git@github.com:ma2gedev/mix-star.git
-$ cd mix-star
-$ mix deps.get
-$ mix do archive.build, archive.install
+# mix.exs
+def deps do
+  [{:mixstar, github: "ma2gedev/mix-star", only: :dev}]
+end
 ```
+
+And fetch: `mix deps.get`
 
 Now you get `mix deps.star` command!
 
 ## How to use
 
+Set your GitHub oauth token to the `GITHUB_OAUTH_TOKEN` environment variable.
+And exec `mix deps.star`
+
 ```
 $ export GITHUB_OAUTH_TOKEN=YOUR_40_CHARACTERS_GITHUB_TOKEN
-$ cd YOUR_ELIXIR_PROJECT
 $ mix deps.star
 ```
+
+Then stared GitHub projects that your project depends on.
 
 ## See Also
 
