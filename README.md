@@ -21,11 +21,19 @@ Now you get `mix deps.star` command!
 
 ## How to use
 
-Set your GitHub oauth token to the `GITHUB_OAUTH_TOKEN` environment variable.
+Write your GitHub credentials into `.netrc` file(locating to `~/.netrc`).
+
+The following is a sample `.netrc` file. And execute `chmod 600 ~/.netrc` to avoid permission error.
+
+```
+machine api.github.com
+  login <your github account>
+  password <your 40 char github token>
+```
+
 And exec `mix deps.star`
 
 ```
-$ export GITHUB_OAUTH_TOKEN=YOUR_40_CHARACTERS_GITHUB_TOKEN
 $ mix deps.star
 ```
 

@@ -14,8 +14,8 @@ defmodule MixStar do
     end
 
     def star_url(project) do
-      "https://api.github.com/user/starred/#{project}?access_token=" <>
-        System.get_env("GITHUB_OAUTH_TOKEN")
+      oauth_token = Netrc.read |> Map.get("api.github.com") |> Map.get("password")
+      "https://api.github.com/user/starred/#{project}?access_token=" <> oauth_token
     end
   end
 end
