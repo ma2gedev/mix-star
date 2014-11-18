@@ -29,7 +29,7 @@ defmodule MixStar.Mixfile do
   # { :barbat, "~> 0.1", github: "elixir-lang/barbat.git" }
   defp deps do
     [
-      { :httpotion, github: "myfreeweb/httpotion" },
+      { :httpoison, "~> 0.5" },
       { :netrc, "~> 0.0.1" }
     ]
   end

@@ -11,7 +11,7 @@ defmodule Mix.Tasks.Deps.Star do
   def run(args) do
     Mix.Task.run("deps.get", args)
 
-    HTTPotion.start
+    HTTPoison.start
 
     Enum.map(loaded(%{}), fn(%Mix.Dep{opts: opts}) ->
       match_list = Regex.named_captures(~r/^git:\/\/github.com\/(?<gh>.*).git$/, opts[:git] || "")
