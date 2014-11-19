@@ -1,5 +1,7 @@
 # MixStar
 
+[![hex.pm version](https://img.shields.io/hexpm/v/mixstar.svg)](https://hex.pm/packages/mixstar) [![hex.pm downloads](https://img.shields.io/hexpm/dt/mixstar.svg)](https://hex.pm/packages/mixstar)
+
 MixStar starred GitHub repository that depends on your project!
 You just type `mix deps.star`, MixStar execute `mix deps.get` internally and starring GitHub repository.
 Enjoy!
