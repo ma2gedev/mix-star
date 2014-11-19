@@ -13,7 +13,7 @@ Add `:mixstar` to your project's dependencies with `only: :dev`:
 ```
 # mix.exs
 def deps do
-  [{:mixstar, github: "ma2gedev/mix-star", only: :dev}]
+  [{:mixstar, "~> 0.0.1", only: :dev}]
 end
 ```
 
