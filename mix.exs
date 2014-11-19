@@ -30,7 +30,8 @@ defmodule MixStar.Mixfile do
   defp deps do
     [
       { :httpoison, "~> 0.5" },
-      { :netrc, "~> 0.0.1" }
+      { :netrc, "~> 0.0.1" },
+      { :ex_doc, "~> 0.6", only: :dev }
     ]
   end
 end
