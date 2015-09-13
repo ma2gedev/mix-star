@@ -11,7 +11,8 @@ Enjoy!
 ```shell
 $ git clone git@github.com:ma2gedev/mix-star.git
 $ cd mix-star
-$ mix do archive.build, archive.install
+$ git submodule update --init
+$ MIX_ENV=prod mix do archive.build, archive.install
 ```
 
 Now you get `mix deps.star` command!
@@ -29,10 +30,6 @@ machine api.github.com
 ```
 
 And exec `mix deps.star`
-
-```
-$ mix deps.star
-```
 
 Then stared GitHub projects that your project depends on.
 
