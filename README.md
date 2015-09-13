@@ -41,6 +41,10 @@ $ mix deps.star
 
 Then stared GitHub projects that your project depends on.
 
+## Dependencies
+
+- [Hex](https://github.com/hexpm/hex)
+
 ## See Also
 
 inspired by bundle-star(https://github.com/ma2gedev/bundle-star)

@@ -11,8 +11,6 @@ defmodule Mix.Tasks.Deps.Star do
   def run(args) do
     Mix.Task.run("deps.get", args)
 
-    HTTPoison.start
-
     Enum.map(loaded(%{}), fn(%Mix.Dep{opts: opts, scm: scm}) ->
       github_project_path(scm, opts)
     end)
@@ -22,13 +20,16 @@ defmodule Mix.Tasks.Deps.Star do
       end
   end
 
-  def starring(gh) do
+  defp starring(gh) do
     case MixStar.GitHub.star(gh) do
-      { :ok, _body } ->
-        IO.puts "\e[33m★  starred #{gh}\e[0m"
-      { :error, body } ->
-        IO.puts "\e[31mfailed to star #{gh}\e[0m"
-        IO.puts body
+      {:ok, _code, _body} ->
+        Mix.shell.info "\e[33m★  starred #{gh}\e[0m"
+      {:error, code, body} ->
+        Mix.shell.info "\e[31mfailed to star #{gh}\e[0m"
+        Mix.shell.info "status: #{code}, body: #{inspect(body)}"
+      {:error, reason} ->
+        Mix.shell.info "\e[31mfailed to star #{gh}\e[0m"
+        Mix.shell.info inspect(reason)
     end
   end
 
@@ -47,7 +48,7 @@ defmodule Mix.Tasks.Deps.Star do
       {_code, body} when _code in 200..299 ->
         body["meta"]
       {_code, _body} ->
-        Mix.Shell.info "Failed to retrieve package information: #{package}"
+        Mix.shell.info "Failed to retrieve package information: #{package}"
         nil
     end
   end
