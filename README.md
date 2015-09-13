@@ -6,6 +6,8 @@ MixStar starred GitHub repository that depends on your project!
 You just type `mix deps.star`, MixStar execute `mix deps.get` internally and starring GitHub repository.
 Enjoy!
 
+![Demo](https://github.com/ma2gedev/mix-star/raw/master/try-mix-star.gif)
+
 ## How to install
 
 ```shell
