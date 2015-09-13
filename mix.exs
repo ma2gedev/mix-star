@@ -29,7 +29,6 @@ defmodule MixStar.Mixfile do
   # { :barbat, "~> 0.1", github: "elixir-lang/barbat.git" }
   defp deps do
     [
-      { :netrc, "~> 0.0.1" },
       { :ex_doc, "~> 0.6", only: :dev }
     ]
   end

@@ -1,0 +1,3 @@
+[submodule "netrcex"]
+	path = netrcex
+	url = git@github.com:ma2gedev/netrcex.git

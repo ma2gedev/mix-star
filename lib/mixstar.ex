@@ -19,7 +19,7 @@ defmodule MixStar do
     end
 
     defp put_request(project) do
-      oauth_token = Netrc.read |> Map.get("api.github.com") |> Map.get("password")
+      oauth_token = MixStar.Ext.Netrc.read |> Map.get("api.github.com") |> Map.get("password")
       authorization_value = String.to_char_list("token #{oauth_token}")
       headers = %{
         'user-agent' => @user_agent,

@@ -8,16 +8,11 @@ Enjoy!
 
 ## How to install
 
-Add `:mixstar` to your project's dependencies with `only: :dev`:
-
+```shell
+$ git clone git@github.com:ma2gedev/mix-star.git
+$ cd mix-star
+$ mix do archive.build, archive.install
 ```
-# mix.exs
-def deps do
-  [{:mixstar, "~> 0.0.1", only: :dev}]
-end
-```
-
-And fetch: `mix deps.get`
 
 Now you get `mix deps.star` command!
 
