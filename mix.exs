@@ -5,7 +5,7 @@ defmodule MixStar.Mixfile do
     [ app: :mixstar,
       name: "MixStar",
       version: "0.1.0",
-      elixir: "~> 1.0.0",
+      elixir: "~> 1.0",
       package: [
         contributors: ["Takayuki Matsubara"],
         licenses: ["MIT"],
