@@ -20,7 +20,7 @@ $ MIX_ENV=prod mix do archive.build, archive.install
 Or
 
 ```shell
-$ mix archive.install https://github.com/ma2gedev/mix-star/releases/download/v0.1.0/mixstar-0.1.0.ez
+$ mix archive.install https://github.com/ma2gedev/mix-star/releases/download/v0.1.1/mixstar-0.1.1.ez
 ```
 
 Now you get `mix deps.star` command!

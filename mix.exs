@@ -4,7 +4,7 @@ defmodule MixStar.Mixfile do
   def project do
     [ app: :mixstar,
       name: "MixStar",
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.0",
       package: [
         contributors: ["Takayuki Matsubara"],
